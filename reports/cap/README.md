@@ -37,7 +37,7 @@ nmap -sT -sV -v 10.129.196.209
 
 Nmap reported 997 closed TCP ports among those tested. The presence of three open ports did **not** itself demonstrate exploitable vulnerabilities. HTTP was selected for further investigation because it provided an accessible application surface.
 
-*Evidence image captured: `screenshots/01-nmap-enumeration.png` (PNG not uploaded yet).*
+![Nmap service enumeration](screenshots/01-nmap-enumeration.png)
 
 **Command correction:** In the recorded session, the attempted command appended `command-logs/` after `-oA "001_nmap"`. Nmap interpreted `command-logs/` as an additional target, causing an error about the target expression. The intended scan still completed for the IP address. The correct way to place all Nmap output formats inside the directory is:
 
@@ -59,7 +59,7 @@ Host: 10.129.196.209
 
 The application responded successfully with content related to a different security snapshot. The access to this resource, including its downloadable packet capture, indicated **insecure direct object reference (IDOR)**, a form of broken object-level authorization.
 
-*Evidence image captured: `screenshots/02-burp-idor.png` (PNG not uploaded yet).*
+![HTTP snapshot request in Burp Repeater](screenshots/02-burp-idor.png)
 
 **Why it matters:** An identifier being guessable is not, by itself, a vulnerability. The problem is the application's failure to enforce ownership or authorization checks before returning the requested user's resource.
 
@@ -71,7 +71,7 @@ The unauthorized snapshot allowed a **PCAP** file to be downloaded and opened in
 
 The lab username identified in the capture was `nathan`. The password is deliberately omitted from this public report.
 
-*Evidence image captured: `screenshots/03-ftp-wireshark.png` (PNG not uploaded yet).*
+![FTP traffic analysis in Wireshark](screenshots/03-ftp-wireshark.png)
 
 **Why it matters:** The broken dashboard authorization exposed a file containing credentials. This converted an application access-control failure into a host compromise opportunity.
 
@@ -87,7 +87,7 @@ ssh nathan@10.129.196.209
 
 The resulting interactive shell provided unprivileged access to the Ubuntu host. The user flag was located in `user.txt`. **Flag contents are intentionally excluded.**
 
-*Evidence image captured: `screenshots/04-ssh-access.png` (PNG not uploaded yet).*
+![Authenticated SSH session](screenshots/04-ssh-access.png)
 
 **Observation:** SSH itself was not shown to be vulnerable. The authenticated login was possible because a valid credential had been exposed elsewhere and was reused.
 
@@ -113,7 +113,7 @@ A notable finding was:
 
 The prompt then reflected root access (`root@cap`), and the root flag file could be read. Both flag values are redacted in the screenshot.
 
-*Evidence image captured: `screenshots/05-privilege-escalation.png` (PNG not uploaded yet).*
+![File capability enumeration and privilege escalation](screenshots/05-privilege-escalation.png)
 
 **Remediation:** Remove unnecessary privileges from general-purpose interpreters and audit file capabilities. Grant narrowly scoped capabilities only to executables that demonstrably require them.
 
@@ -139,8 +139,8 @@ These are documented observations in a deliberately vulnerable lab. A production
 
 ## Proof of completion
 
-*Evidence image captured: `screenshots/06-completion.png` (PNG not uploaded yet).*
+![HTB Cap machine completion](screenshots/06-completion.png)
 
 ---
 
-**Disclosure and ethics:** This walkthrough describes a retired, intentionally vulnerable Hack The Box machine. All IP addresses, commands, and results refer to the authorized lab session. The screenshots included here are sanitized: the FTP password, packet payload and flag values have been redacted.
+**Disclosure and ethics:** This walkthrough documents an authorized, retired Hack The Box training machine. Screenshots are retained as original lab evidence in this private repository. Some images contain an FTP password and lab flags. Redact these before any public release and clean Git history; replacing images in a new commit alone does not remove sensitive bytes from old commits.

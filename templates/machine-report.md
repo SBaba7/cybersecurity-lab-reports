@@ -1,56 +1,64 @@
-# Hack The Box: [Machine name]
+# [Platform] — [Machine or lab name]
 
-> **Difficulty:** [Easy/Medium/Hard]  
-> **Operating system:** [Linux/Windows]  
-> **Status:** [Retired or otherwise permitted to publish]  
-> **Completed:** [YYYY-MM-DD]  
-> **Topics:** [Key techniques]
+**Difficulty:** [Level, if applicable]  
+**Environment:** [Linux / Windows / Web / Cloud / Other]  
+**Platform:** [Authorized training provider]  
+**Completed:** [YYYY-MM-DD]  
+**Publication status:** [Explicitly permitted / Private draft]  
+**Topics:** [Key techniques]
 
 ## Executive summary
 
-Summarize the authorized lab, the major weaknesses, and the final outcome. Clearly distinguish observation from inference.
+Summarize the authorized scope, findings and outcome in a short paragraph. Do not overstate what was demonstrated.
 
-## Scope and tools
+## Scope and methodology
 
-- Target: [Authorized lab only]
-- Tools: [Tools actually used]
+- **Authorized target:** [Lab name, avoid sensitive infrastructure details]
+- **Tools used:** [Only what you actually used]
+- **Objective:** [What was being tested or learned]
 
-## 1. Reconnaissance and enumeration
+## 1. Enumeration and observations
 
-**Command(s):**
+**Command or request:**
 
 ```bash
-# Relevant commands, not an unfiltered session log
+# Relevant command(s) with safe example values
 ```
 
-**Observed results:** [What did the commands actually show?]
+**Evidence:** [Summarize output and insert relative screenshot links where useful.]
 
-**Analysis:** [Why does it matter and what will you investigate next?]
+**Interpretation:** [What did the evidence show? What did it not establish?]
 
-## 2. Initial access
+## 2. Investigation and validation
 
-Explain the vulnerability and demonstrate the authorized sequence. Include evidence without live credentials, tokens, or flags.
+Record hypotheses, tests, results and reasoning in the order needed to understand the finding.
 
-## 3. Privilege escalation
+> Adapt this section to the lab. Do not invent an initial-access step for a lab that did not have one.
 
-Explain which misconfiguration was present, how you verified it, and why it led to additional privileges.
+## 3. Access / exploitation (if applicable)
 
-## 4. Findings and remediation
+Describe the authorized proof of impact. Exclude live credentials, tokens, flags and irrelevant output.
 
-| Finding | Evidence | Impact | Mitigation |
-|---|---|---|---|
-| [Finding 01] | [Relevant proof] | [Realistic lab impact] | [Practical fix] |
+## 4. Privilege escalation (if applicable)
 
-## 5. Lessons learned
+Explain the exact weakness, how you confirmed it, why it mattered, and the observed impact.
 
-- What worked?
-- What failed or took longer than expected?
-- What would you do differently next time?
+## 5. Findings and remediation
+
+| Finding | Evidence | Root cause | Demonstrated impact | Recommendation |
+| --- | --- | --- | --- | --- |
+| [Finding] | [Proof] | [Why] | [What happened] | [Actionable change] |
+
+## 6. Lessons learned
+
+- [One important technical insight]
+- [One incorrect assumption or dead end]
+- [How the investigation could improve]
 
 ## References
 
-- [Official documentation or other relevant sources]
+- [Primary technical references]
 
 ---
 
-*Publishing policy: Only publish solutions for HTB content that permits public writeups. Keep live machine walkthroughs and sensitive captured data private.*
+*Publish only where the lab platform permits writeups. Redact all evidence and review repository history before sharing.*

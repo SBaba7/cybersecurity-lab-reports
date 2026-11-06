@@ -1,39 +1,39 @@
 # Cybersecurity Lab Reports
 
-Technical reports from authorized cybersecurity training labs, focused on **methodology, evidence, root cause, and remediation** rather than simply collecting flags.
+Technical writeups from **authorized cybersecurity training environments**, focused on investigation, evidence, vulnerability root causes, and remediation.
 
 ## Machine reports
 
-| Machine | Platform | OS | Difficulty | Techniques | Report |
-|---|---|---|---|---|---|
-| **Cap** | Hack The Box (retired) | Linux | Easy | Nmap, IDOR, PCAP analysis, credential reuse, SSH, Linux capabilities | [Read the report](reports/cap/README.md) |
+| Machine | Platform | Difficulty | OS | Areas covered | Writeup |
+| --- | --- | --- | --- | --- | --- |
+| [Cap](reports/cap/README.md) | Hack The Box (retired) | Easy | Linux | Service enumeration, IDOR, PCAP analysis, credential reuse, Linux capabilities | [Report](reports/cap/README.md) |
 
-## Repository structure
+New machines will be added as separate entries, with their own report and evidence. The repository structure is designed for multiple labs, not one particular target.
+
+## Organization
 
 ```text
-cybersecurity-lab-reports/
-├── README.md
-├── .gitignore
-├── reports/
-│   └── cap/
-│       ├── README.md
-│       └── screenshots/
-│           └── README.md
-├── templates/
-│   └── machine-report.md
-└── tools/
-    └── README.md
+reports/
+  <machine-slug>/
+    README.md            # Investigation, evidence, findings, remediation
+    screenshots/         # Numbered, relevant, sanitized images
+    scripts/             # Optional: original machine-specific code
+templates/
+  machine-report.md      # Reusable writeup skeleton
+docs/
+  reporting-workflow.md  # How to document and publish future labs
 ```
 
-Every writeup documents the attack chain, the technical evidence, and how the underlying issues could be mitigated. Reusable scripts and further retired-machine reports will be added as they are completed.
+Folders marked **optional** are created only when needed. Original reusable tools, if developed later, can have their own projects instead of empty placeholders here.
 
-**Evidence status:** The Cap Markdown report is uploaded. Its six **sanitized PNG screenshots are pending upload** into `reports/cap/screenshots/` and the report currently references them as evidence-file notes. See [screenshot instructions](reports/cap/screenshots/README.md).
+## Working principles
 
-## Documentation workflow
+- Solve only systems for which you have explicit authorization.
+- Take raw notes, command logs and screenshots **locally** during a session; prepare the report afterward.
+- Explain what a result establishes and what remains uncertain. Keep evidence concise, reproducible, and linked.
+- Publish solutions only after the training platform permits public writeups.
+- Never publish passwords, tokens, flags, VPN configurations or sensitive packet captures. Review screenshots and repository history before changing visibility.
 
-1. Solve only authorized targets; capture terminal outputs and screenshots privately.
-2. Reconstruct the investigation with observations, reasoning, important commands, and remediation.
-3. Remove secrets, credentials, flags, and sensitive artifacts.
-4. Publish only after the platform allows public walkthroughs.
+See the [report template](templates/machine-report.md) and [reporting workflow](docs/reporting-workflow.md).
 
-> All findings concern intentionally vulnerable lab systems. Nothing in this repository is authorization to test unrelated systems.
+> **Repository status:** Private. Some original Cap screenshots still contain lab credentials or flags and must be sanitized, including Git history, before public release.
