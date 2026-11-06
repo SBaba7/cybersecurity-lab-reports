@@ -1,3 +1,13 @@
+## Disclaimer
+
+This repository contains penetration-testing walkthroughs and technical reports from authorized cybersecurity training environments, primarily Hack The Box.
+
+Reports may include simulated credentials, IP addresses, exploitation commands, screenshots, and challenge solutions for officially retired machines.
+
+All activities were performed within authorized lab environments for educational purposes. No real-world credentials or private information are intentionally disclosed.
+
+Solutions for active Hack The Box machines will not be published.
+
 # Cybersecurity Lab Reports
 
 Technical writeups from **authorized cybersecurity training environments**, focused on investigation, evidence, vulnerability root causes, and remediation.
