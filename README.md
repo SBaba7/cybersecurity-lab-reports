@@ -17,6 +17,7 @@ Technical writeups from **authorized cybersecurity training environments**, focu
 | Machine | Platform | Difficulty | OS | Areas covered | Writeup |
 | --- | --- | --- | --- | --- | --- |
 | [Cap](reports/cap/README.md) | Hack The Box (retired) | Easy | Linux | Service enumeration, IDOR, PCAP analysis, credential reuse, Linux capabilities | [Report](reports/cap/README.md) |
+| [TwoMillion](reports/twomillion/README.md) | Hack The Box (retired) | Easy | Linux | Invite API analysis, access control, command injection, credential reuse, CVE-2023-0386 | [Report](reports/twomillion/README.md) |
 
 New machines will be added as separate entries, with their own report and evidence. The repository structure is designed for multiple labs, not one particular target.
 
