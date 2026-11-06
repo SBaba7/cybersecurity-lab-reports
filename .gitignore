@@ -1,0 +1,32 @@
+# Local note-taking and temporary editor data
+.obsidian/
+.DS_Store
+*.swp
+*~
+
+# Secrets and credentials
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*credentials*
+*passwords*
+
+# Sensitive lab artifacts (keep local, don't publish)
+*.pcap
+*.pcapng
+*.cap
+*.sqlite
+*.db
+**/command-logs/
+**/session-logs/
+**/raw/
+**/user.txt
+**/root.txt
+
+# Python-generated files
+__pycache__/
+*.pyc
+.venv/
+venv/
