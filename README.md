@@ -1,50 +1,52 @@
-## Disclaimer
-
-This repository contains penetration-testing walkthroughs and technical reports from authorized cybersecurity training environments, primarily Hack The Box.
-
-Reports may include simulated credentials, IP addresses, exploitation commands, screenshots, and challenge solutions for officially retired machines.
-
-All activities were performed within authorized lab environments for educational purposes. No real-world credentials or private information are intentionally disclosed.
-
-Solutions for active Hack The Box machines will not be published.
-
 # Cybersecurity Lab Reports
 
-Technical writeups from **authorized cybersecurity training environments**, focused on investigation, evidence, vulnerability root causes, and remediation.
+A portfolio of authorized cybersecurity training work, including technical reports for retired Hack The Box machines and **non-spoiler completion evidence** for machines that were active when solved.
 
-## Machine reports
+## Retired machines — technical reports
 
-| Machine | Platform | Difficulty | OS | Areas covered | Writeup |
+| Machine | Platform | Difficulty | OS | Topics | Report |
 | --- | --- | --- | --- | --- | --- |
-| [Cap](reports/cap/README.md) | Hack The Box (retired) | Easy | Linux | Service enumeration, IDOR, PCAP analysis, credential reuse, Linux capabilities | [Report](reports/cap/README.md) |
-| [TwoMillion](reports/twomillion/README.md) | Hack The Box (retired) | Easy | Linux | Invite API analysis, access control, command injection, credential reuse, CVE-2023-0386 | [Report](reports/twomillion/README.md) |
+| [Cap](reports/cap/README.md) | Hack The Box (retired) | Easy | Linux | Service enumeration, IDOR, PCAP analysis, credential reuse, Linux capabilities | [Read report](reports/cap/README.md) |
+| [TwoMillion](reports/twomillion/README.md) | Hack The Box (retired) | Easy | Linux | Invite API analysis, access control, command injection, credential reuse, CVE-2023-0386 | [Read report](reports/twomillion/README.md) |
 
-New machines will be added as separate entries, with their own report and evidence. The repository structure is designed for multiple labs, not one particular target.
+## Active machines — completion records only
 
-## Organization
+| Machine | Platform | Difficulty | OS | Completed | Evidence | Report |
+| --- | --- | --- | --- | --- | --- | --- |
+| **Connected** | Hack The Box | Easy | Linux | **8 November 2026** | [Completion screenshot](completions/connected-2026-11-08.png) | **Intentionally withheld while active** |
+
+### Why does Connected not have a report?
+
+Connected was an **active Hack The Box machine on 8 November 2026**, the date of completion. Detailed solutions, exploit chains, commands, flags, and hints have **intentionally not been included** in this repository to respect HTB's active-machine content restrictions. The missing writeup is a publication decision, **not an incomplete attempt**. A technical report may be added when the machine officially retires and HTB permits walkthroughs.
+
+![Hack The Box Connected completion confirmation, 8 November 2026](completions/connected-2026-11-08.png)
+
+## Repository organization
 
 ```text
 reports/
   <machine-slug>/
-    README.md            # Investigation, evidence, findings, remediation
-    screenshots/         # Numbered, relevant, sanitized images
-    scripts/             # Optional: original machine-specific code
+    README.md           # Writeup for a retired, publication-eligible machine
+    screenshots/        # Selected report evidence
+    scripts/            # Optional original machine-specific tools
+completions/
+  <machine>-<date>.png  # Proof of completion; no active-machine spoilers
 templates/
-  machine-report.md      # Reusable writeup skeleton
+  machine-report.md     # Reusable technical-report template
 docs/
-  reporting-workflow.md  # How to document and publish future labs
+  reporting-workflow.md
 ```
 
-Folders marked **optional** are created only when needed. Original reusable tools, if developed later, can have their own projects instead of empty placeholders here.
+Optional directories are created only when there is material to put inside them. New machines are added to the appropriate section above; no empty report folders are needed for active content.
 
-## Working principles
+## Documentation and disclosure policy
 
-- Solve only systems for which you have explicit authorization.
-- Take raw notes, command logs and screenshots **locally** during a session; prepare the report afterward.
-- Explain what a result establishes and what remains uncertain. Keep evidence concise, reproducible, and linked.
-- Publish solutions only after the training platform permits public writeups.
-- Never publish passwords, tokens, flags, VPN configurations or sensitive packet captures. Review screenshots and repository history before changing visibility.
+- Work is restricted to authorized training environments.
+- Reports explain investigation, evidence, root cause, and remediation without presenting guesses as verified findings.
+- **Active machines:** completion metadata and screenshot only; no walkthroughs or hints, even though this repository is private.
+- **Retired machines:** detailed writeups when the platform allows publication.
+- Review screenshot contents and Git history before making the repository public; don't publish genuine secrets, session tokens, VPN configurations, or unrelated personal information.
 
-See the [report template](templates/machine-report.md) and [reporting workflow](docs/reporting-workflow.md).
+For the reporting process, see [reporting workflow](docs/reporting-workflow.md) and [machine report template](templates/machine-report.md).
 
-> **Repository status:** Private. Some original Cap screenshots still contain lab credentials or flags and must be sanitized, including Git history, before public release.
+> **Current visibility:** Private. Historical Cap evidence contains lab artifacts that should be reviewed and sanitized, including past commits, before publication.
