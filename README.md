@@ -14,12 +14,15 @@ A portfolio of authorized cybersecurity training work, including technical repor
 | Machine | Platform | Difficulty | OS | Completed | Evidence | Report |
 | --- | --- | --- | --- | --- | --- | --- |
 | **Connected** | Hack The Box | Easy | Linux | **8 November 2026** | [Completion screenshot](completions/connected-2026-11-08.png) | **Intentionally withheld while active** |
+| **Enigma** | Hack The Box | Not recorded | Not recorded | **15 November 2026** | [Completion record](completions/enigma-2026-11-15.md) | **Intentionally withheld while active** |
 
-### Why does Connected not have a report?
+### Why are Connected and Enigma missing technical reports?
 
-Connected was an **active Hack The Box machine on 8 November 2026**, the date of completion. Detailed solutions, exploit chains, commands, flags, and hints have **intentionally not been included** in this repository to respect HTB's active-machine content restrictions. The missing writeup is a publication decision, **not an incomplete attempt**. A technical report may be added when the machine officially retires and HTB permits walkthroughs.
+Connected and Enigma were **active Hack The Box machines at the time of their respective completions** (8 November and 15 November 2026). Detailed solutions, exploit chains, commands, flags, and hints have **intentionally not been included** in this repository to respect HTB's active-machine content restrictions. The missing writeup is a publication decision, **not an incomplete attempt**. A technical report may be added when the machine officially retires and HTB permits walkthroughs.
 
 ![Hack The Box Connected completion confirmation, 8 November 2026](completions/connected-2026-11-08.png)
+
+[Enigma completion metadata, 15 November 2026](completions/enigma-2026-11-15.md) (screenshot supplied separately; not uploaded to GitHub).
 
 ## Repository organization
 
@@ -30,7 +33,8 @@ reports/
     screenshots/        # Selected report evidence
     scripts/            # Optional original machine-specific tools
 completions/
-  <machine>-<date>.png  # Proof of completion; no active-machine spoilers
+  <machine>-<date>.png  # Screenshot proof when uploaded and reviewed
+  <machine>-<date>.md   # Spoiler-free completion metadata
 templates/
   machine-report.md     # Reusable technical-report template
 docs/
@@ -43,7 +47,7 @@ Optional directories are created only when there is material to put inside them.
 
 - Work is restricted to authorized training environments.
 - Reports explain investigation, evidence, root cause, and remediation without presenting guesses as verified findings.
-- **Active machines:** completion metadata and screenshot only; no walkthroughs or hints, even though this repository is private.
+- **Active machines:** completion metadata and, when available, reviewed screenshot evidence only; no walkthroughs or hints, even though this repository is private.
 - **Retired machines:** detailed writeups when the platform allows publication.
 - Review screenshot contents and Git history before making the repository public; don't publish genuine secrets, session tokens, VPN configurations, or unrelated personal information.
 
